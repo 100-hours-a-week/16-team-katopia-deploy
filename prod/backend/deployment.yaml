@@ -27,7 +27,7 @@ spec:
 
       containers:
         - name: backend
-          image: 713502468901.dkr.ecr.ap-northeast-2.amazonaws.com/katopia/kube/backend:prod-backend
+          image: 713502468901.dkr.ecr.ap-northeast-2.amazonaws.com/katopia/kube/backend:prod-09d11d1
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
