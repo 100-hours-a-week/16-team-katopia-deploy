@@ -18,14 +18,14 @@ spec:
         - name: ecr-secret
       containers:
         - name: backend
-          image: 713502468901.dkr.ecr.ap-northeast-2.amazonaws.com/katopia/kube/backend:dev-backend
+          image: 713502468901.dkr.ecr.ap-northeast-2.amazonaws.com/katopia/kube/backend:prod-backend
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
 
           env:
             - name: SPRING_PROFILES_ACTIVE
-              value: dev
+              value: prod
 
           envFrom:
             - secretRef:
