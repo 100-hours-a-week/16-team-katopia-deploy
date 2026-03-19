@@ -1,2 +1,2 @@
-# 16-team-katopia-chat
-Fitcheck의 채팅 서버입니다.
+# 16-team-katopia-deploy
+Fitcheck의 Argo 배포 서버입니다.
