@@ -5,7 +5,7 @@ metadata:
   labels:
     app: backend
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: backend
@@ -14,8 +14,17 @@ spec:
       labels:
         app: backend
     spec:
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: topology.kubernetes.io/zone
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: backend
+
       imagePullSecrets:
         - name: ecr-secret
+
       containers:
         - name: backend
           image: 713502468901.dkr.ecr.ap-northeast-2.amazonaws.com/katopia/kube/backend:prod-backend
